@@ -1,0 +1,273 @@
+/* don't forget your reset! */
+/* the visibility of your modal is based in CSS */
+/* it would be easier to get the html and css looking right for both first, then set the modal to be hidden */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: lightblue;
+}
+
+.button-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 58vh;
+    width: 100%;
+    overflow: hidden;
+    gap: 50px;
+
+}
+
+button {
+    height: 10%;
+    width: 10%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-family: 'Azonix';
+    background-color: lightgray;
+    border-radius: 20px;
+    z-index: 1;
+
+}
+
+.close-btn {
+    height: 12%;
+    width: 12%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    font-family: 'Azonix';
+    background-color: lightgray;
+    border-radius: 20px;
+    z-index: 1;
+
+}
+
+/* modal 1 */
+
+.modal-container1 {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+
+}
+
+.modal-container1.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal1 {
+    background-color: white;
+    width: 20%;
+    max-width: 100%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 1% 1%;
+    text-align: center;
+
+}
+
+/* modal 2 */
+
+.modal-container2 {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+
+.modal-container2.show {
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.modal2.drop {
+
+    animation: drop 0.5s ease forwards;
+}
+
+
+.modal2 {
+    background-color: black;
+    color: white;
+    width: 20%;
+    max-width: 100%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 1% 1%;
+    text-align: center;
+
+}
+
+
+@keyframes drop {
+    0% {
+        opacity: 0
+    }
+
+
+
+    70% {
+        transform: translateY(700px)
+    }
+
+
+
+    100% {
+        transform: translateY(650px) opacity:1;
+    }
+
+
+}
+
+/* modal 3 */
+
+.modal-container3 {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: opacity 1s ease;
+
+}
+
+
+.modal-container3.show {
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+#vid_container {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+#vid_container.show {
+    opacity: 1;
+
+}
+
+.modal3 {
+    background-color: red;
+    color: black;
+    width: 30%;
+    max-width: 100%;
+    height: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 1% 1%;
+    text-align: center;
+    font-size: 2.5rem;
+    z-index: 1;
+  
+}
